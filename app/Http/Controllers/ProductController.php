@@ -2,14 +2,20 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Models\ParentCategory;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Helpers\MyHelper;
+
 
 class ProductController extends Controller
 {
+
+
     function productGallery(){
        $allImages=Product::all();
+     
       return view('admin.products.browse',['images'=>$allImages]);
     }
     

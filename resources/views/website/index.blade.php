@@ -2,9 +2,14 @@
 
 @section('content')
 
+<?php 
+ use App\Models\Product;
+
+?>
+    @include('includes.webslider')
 
     <!--hero section start-->
-    <section class="ur-hero-section position-relative z-1 overflow-hidden" data-background="assets/images/bg/hero-bg.jpg">
+    {{-- <section class="ur-hero-section position-relative z-1 overflow-hidden" data-background="assets/images/bg/hero-bg.jpg">
         <span class="circle-white position-absolute z--1 rounded-circle"></span>
         <img src="assets/images/shapes/circle-1.png" alt="circle" class="position-absolute end-0 bottom-0 z--1 circle-color">
         <div class="container">
@@ -57,7 +62,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--hero section end-->
 
 <!--cart drawer start-->
@@ -172,56 +177,23 @@
                 </div>
             </div>
             <div class="ur-category-slider slider-spacing">
-                <div class="position-relative pp-overlay-card overflow-hidden">
-                    <img src="assets/images/headset/headset_2.jpg" alt="earrings" class="img-fluid"
-                        style="height: 100%;">
-                    <!-- <span class="category-title position-absolute">Headset</span> -->
-                    <a href="shop-list.html" class="pp-overlay position-absolute">
-                        <span class="text-center">Headset</span>
-                    </a>
-                </div>
-                <div class="position-relative pp-overlay-card overflow-hidden">
-                    <img src="assets/images/earrings/earings_1.jpg" alt="neaklaces" class="img-fluid">
-                    <!-- <span class="category-title position-absolute">Earings</span> -->
-                    <a href="shop-list.html" class="pp-overlay position-absolute">
-                        <span class="text-center">Earings</span>
-                    </a>
-                </div>
-                <div class="position-relative pp-overlay-card overflow-hidden">
-                    <img src="assets/images/necklaces_chockers/neck_1.jpg" alt="rings" class="img-fluid">
-                    <!-- <span class="category-title position-absolute">Necklaces & Chokers</span> -->
-                    <a href="#" class="pp-overlay position-absolute">
-                        <span class="text-center">Necklaces & Chokers</span>
-                    </a>
-                </div>
-                <div class="position-relative pp-overlay-card overflow-hidden">
-                    <img src="assets/images/long_harams/haram_1.jpg" alt="bracelets" class="img-fluid">
-                    <!-- <span class="category-title position-absolute">Long Harams</span> -->
-                    <a href="shop-list.html" class="pp-overlay position-absolute">
-                        <span class="text-center">Long Harams</span>
-                    </a>
-                </div>
-                <div class="position-relative pp-overlay-card overflow-hidden">
-                    <img src="assets/images/ottiyanam/belt.jpg" alt="rings" class="img-fluid">
-                    <!-- <span class="category-title position-absolute">Ottiyanam</span> -->
-                    <a href="shop-list.html" class="pp-overlay position-absolute">
-                        <span class="text-center">Ottiyanam</span>
-                    </a>
-                </div>
-                <div class="position-relative pp-overlay-card overflow-hidden">
-                    <img src="assets/images/fancy_chockers/fancy.jpg" alt="rings" class="img-fluid">
-                    <!-- <span class="category-title position-absolute">Fancy Chokers & Earings</span> -->
-                    <a href="shop-list.html" class="pp-overlay position-absolute">
-                        <span class="text-center">Fancy Chokers & Earings</span>
-                    </a>
-                </div>
-                <div class="position-relative pp-overlay-card overflow-hidden">
-                    <img src="assets/images/bangles/bangle_1.jpg" alt="rings" class="img-fluid">
-                    <!-- <span class="category-title position-absolute">Bangles</span> -->
-                    <a href="shop-list.html" class="pp-overlay position-absolute">
-                        <span class="text-center">Bangles</span>
-                    </a>
-                </div>
+        @foreach ($categories as $item)
+        <?php  
+        $image=Product::where('categoryId',$item->id)->first();
+
+        ?>
+        @if($image!=null)
+        <div class="position-relative pp-overlay-card overflow-hidden">
+           
+            <img src="{{ asset('storage/product/images/' . $image->imageName) }}" alt="{{$image->imageName}}" class="img-fluid">
+            <!-- <span class="category-title position-absolute">Bangles</span> -->
+            <a href="{{route('products',['id'=>$item->id])}}" class="pp-overlay position-absolute">
+                <span class="text-center">{{$item->categoryName}}</span>
+            </a>
+        </div>
+        @endif
+        @endforeach
+                
             </div>
         </div>
     </section>
@@ -255,126 +227,26 @@
                 </div>
             </div>
             <div class="row g-4 justify-content-center">
+                @if(count($images)!=0)
+                @foreach ($images as $image)
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="ur-product-card position-relative card-sm-small">
-
                         <div
                             class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                            <a href="product-details.html"><img src="assets/images/bangles/bangle_1.jpg" alt="rings"
+                            <a href="product-details.html"><img src="{{ asset('storage/product/images/' . $image->imageName) }}" alt="{{$image->imageTitle}}"
                                     class="img-fluid"></a>
                         </div>
                         <div class="mt-4">
-                            <a href="shop-list.html" class="secondary-text-color text-uppercase">Bangles</a>
-
-
+                            <a href="shop-list.html" class="secondary-text-color text-uppercase">{{$image->imageTitle}}</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="ur-product-card position-relative card-sm-small">
-
-                        <div
-                            class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                            <a href="product-details.html"><img src="assets/images/earrings/earings_1.jpg" alt="rings"
-                                    class="img-fluid"></a>
-                        </div>
-                        <div class="mt-4">
-                            <a href="shop-list.html" class="secondary-text-color text-uppercase">Earrings</a>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="ur-product-card position-relative card-sm-small">
-
-                        <div
-                            class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                            <a href="product-details.html"><img src="assets/images/fancy_chockers/fancy.jpg" alt="rings"
-                                    class="img-fluid"></a>
-                        </div>
-                        <div class="mt-4">
-                            <a href="shop-list.html" class="secondary-text-color text-uppercase">Fancy Chockers</a>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="ur-product-card position-relative card-sm-small">
-
-                        <div
-                            class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                            <a href="product-details.html"><img src="assets/images/headset/headset_2.JPG" alt="rings"
-                                    class="img-fluid"></a>
-                        </div>
-                        <div class="mt-4">
-                            <a href="shop-list.html" class="secondary-text-color text-uppercase">Headset</a>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="ur-product-card position-relative card-sm-small">
-
-                        <div
-                            class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                            <a href="product-details.html"><img src="assets/images/long_harams/haram_1.jpg" alt="rings"
-                                    class="img-fluid"></a>
-                        </div>
-                        <div class="mt-4">
-                            <a href="shop-list.html" class="secondary-text-color text-uppercase">Long Harams</a>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="ur-product-card position-relative card-sm-small">
-
-                        <div
-                            class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                            <a href="product-details.html"><img src="assets/images/necklaces_chockers/neck_1.jpg"
-                                    alt="rings" class="img-fluid"></a>
-                        </div>
-                        <div class="mt-4">
-                            <a href="shop-list.html" class="secondary-text-color text-uppercase">Necklaces &
-                                Chockers</a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="ur-product-card position-relative card-sm-small">
-
-                        <div
-                            class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                            <a href="product-details.html"><img src="assets/images/ottiyanam/belt.jpg" alt="rings"
-                                    class="img-fluid"></a>
-                        </div>
-                        <div class="mt-4">
-                            <a href="shop-list.html" class="secondary-text-color text-uppercase">Ottiyanam</a>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="ur-product-card position-relative card-sm-small">
-
-                        <div
-                            class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                            <a href="product-details.html"><img src="assets/images/headset/headset_1.jpg" alt="rings"
-                                    class="img-fluid"></a>
-                        </div>
-                        <div class="mt-4">
-                            <a href="shop-list.html" class="secondary-text-color text-uppercase">Headset</a>
-
-
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+                @else
+                    <h1 class="row g-4 justify-content-center p-5" style="color:black !important">
+                        COMMING SOON
+                    </h1>
+                @endif
 
 
 
@@ -399,38 +271,14 @@
                         <div class="text-center"></div>
                         <h2 class="h1 mb-50" style="color:White">Our Customer Testimonials</h2>
                         <div class="ur-feedback-slider slider-spacing">
+                            @foreach ($testimonials as $item)
                             <div class="ur-feedback-single">
-                                <p class="fw-light mb-4">“Flawless jewellery, Had great experience as their happy
-                                    customer. The quality was as it's best.”</p>
-                                <h3 class=" mb-0">Reshma Arun</h3>
+                                <p class="fw-light mb-4">“ {{$item->customerNote}}”</p>
+                                <h3 class=" mb-0">{{$item->customerName}}</h3>
                                 <!-- <span class="fs-sm fw-light ">DESIGNER</span> -->
                             </div>
-                            <div class="ur-feedback-single">
-                                <p class="fw-light mb-4">“Visited their place, Varieties of jewells available. Very
-                                    meticulously done, Courteous Owner, Good Experience”</p>
-                                <h3 class=" mb-0">Venkatesh. P</h3>
-                                <!-- <span class="fs-sm fw-light ">Developer</span> -->
-                            </div>
-                            <div class="ur-feedback-single">
-                                <p class="fw-light mb-4">“The best temple jewelry store. Quality is at its best with
-                                    nominal charges. I have received very good response from them. I have loved the
-                                    jewelry from SR temple jewelry store. Go ahead with them and you will never regret”
-                                </p>
-                                <h3 class=" mb-0">Archana H.R </h3>
-                                <!-- <span class="fs-sm fw-light ">Manager</span> -->
-                            </div>
-                            <div class="ur-feedback-single">
-                                <p class="fw-light mb-4">“Very Happy with the design & price they quote, service they
-                                    render, Overall very satisfied.”</p>
-                                <h3 class=" mb-0">Kalamandalam Lekha </h3>
-                                <!-- <span class="fs-sm fw-light ">Manager</span> -->
-                            </div>
-                            <div class="ur-feedback-single">
-                                <p class="fw-light mb-4">“Best customer service. Beautiful and authentic ornaments.
-                                    Delivered on time.”</p>
-                                <h3 class=" mb-0">Udhayasree Panicker </h3>
-                                <!-- <span class="fs-sm fw-light ">Manager</span> -->
-                            </div>
+                          @endforeach
+                            
                         </div>
                     </div>
                 </div>

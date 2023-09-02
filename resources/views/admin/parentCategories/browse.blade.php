@@ -6,14 +6,14 @@
       @include('../includes.sidebar')
       <div class="main-panel">
         <div class="content-wrapper">
-        <a href="{{route('category.add')}}" class="btn btn-primary text-white m-2 "><i class="mdi mdi-plus"></i></a>
+        <a href="{{route('parentCategory.add')}}" class="btn btn-primary text-white m-2 "><i class="mdi mdi-plus"></i></a>
         <div class="col-lg-12 grid-margin stretch-card">
             
               <div class="card">
                 
                 <div class="card-body">
 
-                  <h4 class="card-title">Categories List</h4>
+                  <h4 class="card-title">Parent Categories List</h4>
                   
                   <div class="table-responsive">
                     <table class="table table-striped">
@@ -22,22 +22,22 @@
                           <th>
                             CategoryName
                           </th>
-                          
+                        
                           <th>
                             Actions
                           </th>
                         </tr>
                       </thead>
                       <tbody>
-                      @foreach ($categories as $item)
+                      @foreach ($parentCategories as $item)
                       <tr>
                           <td>
-                           {{$item->categoryName}}
+                           {{$item->parentCategoryName}}
                           </td>
+                        
                           <td>
-                          <a href="{{route('category.edit',['id' => $item->id])}}" class="btn btn-success"><i class="mdi mdi-grease-pencil"></i></a>
-                          <a href="{{route('category.delete',['id' => $item->id])}}" class="btn btn-danger"><i class="mdi mdi-delete-variant"></i></a>                          
-                          <a href="{{route('category.product.view',['id' => $item->id])}}" class="btn btn-primary"><i class="mdi mdi-eye"></i></a>                          
+                          <a href="{{route('parentCategory.edit',['id' => $item->id])}}" class="btn btn-success"><i class="mdi mdi-grease-pencil"></i></a>
+                          <a href="{{route('parentCategory.delete',['id' => $item->id])}}" class="btn btn-danger"><i class="mdi mdi-delete-variant"></i></a>                          
                           
                         </td>
                         </tr>

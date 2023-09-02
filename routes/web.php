@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,19 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//parent categories
+
+Route::get('/parent_categories_list',[App\Http\Controllers\ParentCategoryController::class, 'categoryList'])->name('parentCategory.list.view');
+Route::get('/parent_category_add',[App\Http\Controllers\ParentCategoryController::class, 'addNewCategoryPage'])->name('parentCategory.add');
+Route::post('/parent_category_save',[App\Http\Controllers\ParentCategoryController::class, 'saveNewCategory'])->name('parentCategory.save');
+Route::get('/parent_category_edit',[App\Http\Controllers\ParentCategoryController::class, 'editCategoryPage'])->name('parentCategory.edit');
+Route::any('/parent_category_update',[App\Http\Controllers\ParentCategoryController::class, 'updateCategory'])->name('parentCategory.update');
+Route::get('/parent_category_delete',[App\Http\Controllers\ParentCategoryController::class, 'deleteCategory'])->name('parentCategory.delete');
+Route::get('/parent_category_product_images',[App\Http\Controllers\ParentCategoryController::class, 'categoryProductGallery'])->name('parentCategory.product.view');
+
+
 
 //categories
 
@@ -58,18 +72,33 @@ Route::get('/slide_delete',[App\Http\Controllers\SlideController::class, 'delete
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
-});
+})->name('dashboard');
+
+
+//testimonials
+
+// List products
+Route::get('/testimonials', [App\Http\Controllers\TestimonialController::class, 'index'])->name('testimonial.index');
+
+// Show create product form
+Route::get('/testimonial_add', [App\Http\Controllers\TestimonialController::class, 'create'])->name('testimonial.create');
+
+// Store a new product
+Route::post('/testimonials', [App\Http\Controllers\TestimonialController::class, 'store'])->name('testimonial.store');
+
+// Show edit product form
+Route::get('/testimonials_edit', [App\Http\Controllers\TestimonialController::class, 'edit'])->name('testimonial.edit');
+
+// Update a product
+Route::put('/testimonials', [App\Http\Controllers\TestimonialController::class, 'update'])->name('testimonial.update');
+
+Route::get('/testimonials/delete', [App\Http\Controllers\TestimonialController::class, 'delete'])->name('testimonial.delete');
+
 
 
 
 //website routes
 
-Route::get('/', function () {
-    return view('website.index');
-});
-Route::get('/products', function () {
-    return view('website.products');
-})->name('products');
-Route::get('/aboutus', function () {
-    return view('website.aboutus');
-})->name('aboutus');
+Route::get('/',[App\Http\Controllers\WebsiteController::class, 'website'])->name('/');
+Route::get('/products', [App\Http\Controllers\WebsiteController::class, 'getSelectedCategoryProducts'])->name('products');
+Route::get('/aboutus', [App\Http\Controllers\WebsiteController::class, 'aboutus'])->name('aboutus');

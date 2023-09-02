@@ -10,36 +10,26 @@
                 <div class="card">
                     <div class="card-body">
                     <h4 class="card-title">@if($type=="edit")Edit @else Add @endif Category</h4> 
-                  <form class="forms-sample" method="post" action="{{ $type == 'add' ? route('category.save') : route('category.update',['id'=>$category->id]) }}">
+                  <form class="forms-sample" method="post" action="{{ $type == 'add' ? route('parentCategory.save') : route('parentCategory.update',['id'=>$productCategory->id]) }}">
                       @csrf
                       @if($type == 'edit') @method('put') @endif
                       <div class="form-group">
-                          <label for="categoryName">Category Name</label>
-                          <input type="text" class="form-control" id="categoryName" name="categoryName" placeholder="Enter Here" value="{{ $type == 'edit' ? $category->categoryName : '' }}">
+                          <label for="parentCategoryName">Category Name</label>
+                          <input type="text" class="form-control" id="categoryName" name="parentCategoryName" placeholder="Enter Here" value="{{ $type == 'edit' ? $productCategory->categoryName : '' }}">
                       </div>
-                      @if($type != 'edit')  
                       <div class="form-group">
-                          <label for="toggleButton">Toggle Group</label>
-                          <div class="form-check">
-                              <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" id="toggleButton">Is a subcategory
-                              </label>
-                          </div> 
-                      </div>
-                      @endif 
+    <!-- <label for="toggleButton">Toggle Group</label> -->
+    <!-- <div class="form-check">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" id="toggleButton">Need grouping
+        </label>
+    </div> -->
+</div>
 
- <div class="form-group" id="groupNameContainer">
-    <label for="groupName">Select MainCategory</label>
-    <select class="form-control" name="parentCategoryId" >
-{{-- @if()
-
-@endif --}}
-      <option value="">default as parent category</option>
-      @foreach($parentCategories as $item)
-<option value="{{$item->id}}">{{$item->parentCategoryName}}</option>
-@endforeach
-    </select>
-</div> 
+<!-- <div class="form-group" id="groupNameContainer">
+    <label for="groupName">Group Name</label>
+    <input type="text" class="form-control" id="groupName" name="groupName" placeholder="Enter Group Name">
+</div> -->
                       <button type="submit" class="btn btn-primary me-2">{{ $type == 'edit' ? 'Update' : 'Save' }}</button>
                   </form>
 

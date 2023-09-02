@@ -37,19 +37,19 @@
                                 <li><a href="{{route('aboutus')}}">ABOUTUS</a></li>
                                 <li class="has-submenu"><a href="javascript:void(0)">PRODUCTS</a>
                                     <ul class="submenu-wrapper">
-                                        <li class="has-submenu"><a href="javascript:void(0)">Headset</a>
+                                        @foreach ($datas as $data)
+                                        @if($data['dropdownIdMain']==null)
+                                        <li class="has-submenu"><a href="javascript:void(0)">{{$data['dropdownNameMain']}}</a>
                                             <ul class="submenu-wrapper">
-                                                <li><a href="{{route('products')}}">Single Chutti</a></li>
-                                                <li><a href="{{route('products')}}">Full Chutti</a></li>
+                                                @foreach ($data['subCategoryList'] as $item)
+                                                <li><a href="{{route('products',['id'=>$item['dropdownIdSub']])}}">{{$item['dropdownNameSub']}}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href="{{route('products')}}">Earings</a></li>
-                                        <li><a href="shop.html">Necklaces & Choker</a></li>
-                                        <li><a href="shop.html">Long Harams</a></li>
-                                        <li><a href="shop.html">Ottiyanam(Belt)</a></li>
-                                        <li><a href="shop.html">Fancy chokers & Earings</a></li>
-                                        <li><a href="shop.html">Bangles</a></li>
-                                        <li><a href="shop.html">Others</a></li>
+                                        @else
+                                        <li><a href="{{route('products',['id'=>$data['dropdownIdMain']])}}">{{$data['dropdownNameMain']}}</a></li>
+                                        @endif
+                                         @endforeach
                                     </ul>
                                 </li>
                                 <li><a href="/#contactfooter">CONTACT US</a></li>
@@ -158,30 +158,30 @@
     <!--mobile menu start-->
     <div class="mobile-menu">
         <a href="javascript:void(0)" class="close"><i class="fas fa-xmark"></i></a>
-        <a href="#" class="logo"><img src="assets/images/logo-black.jpg" alt="logo" class="img-fluid"></a>
+        <a href="#" class="logo"><img src="assets/images/logo.png" alt="logo" class="img-fluid"></a>
         <ul class="mobile-nav-menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="{{route('aboutus')}}">AboutUs</a></li>
-            <li class="has-submenu"><a href="javascript:void(0)">Products</a>
-                <i class="fas fa-angle-down"></i>
-                <ul class="submenu-wrapper">
-                    <li class="has-submenu"><a href="javascript:void(0)">Headset</a>
-                        <i class="fas fa-angle-down"></i>
-                        <ul class="submenu-wrapper">
-                            <li><a href="{{route('products')}}">Single Chutti</a></li>
-                            <li><a href="{{route('products')}}">Full Chutti</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="shop.html">Earings</a></li>
-                    <li><a href="shop.html">Necklaces & Choker</a></li>
-                    <li><a href="shop.html">Long Harams</a></li>
-                    <li><a href="shop.html">Ottiyanam(Belt)</a></li>
-                    <li><a href="shop.html">Fancy chokers & Earings</a></li>
-                    <li><a href="shop.html">Bangles</a></li>
-                    <li><a href="shop.html">Others</a></li>
-                </ul>
-            </li>
-            <li><a href="/#contactfooter">ContactUs</a></li>
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="{{route('aboutus')}}">ABOUTUS</a></li>
+                <li class="has-submenu"><a href="javascript:void(0)">PRODUCTS</a>
+                    <ul class="submenu-wrapper">
+                        @foreach ($datas as $data)
+                        @if($data['dropdownIdMain']==null)
+                        <li class="has-submenu"><a href="javascript:void(0)">{{$data['dropdownNameMain']}}</a>
+                            <ul class="submenu-wrapper">
+                                @foreach ($data['subCategoryList'] as $item)
+                                <li><a href="{{route('products',['id'=>$item['dropdownIdSub']])}}">{{$item['dropdownNameSub']}}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+                        @else
+                        <li><a href="{{route('products',['id'=>$data['dropdownIdMain']])}}">{{$data['dropdownNameMain']}}</a></li>
+                        @endif
+                         @endforeach
+                    </ul>
+                </li>
+                <li><a href="/#contactfooter">CONTACT US</a></li>
+            </ul>
 
 
         </ul>

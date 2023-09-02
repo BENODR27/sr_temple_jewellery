@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ParentCategory;
 
 use Illuminate\Http\Request;
 
@@ -15,12 +16,17 @@ class CategoryController extends Controller
      
      function addNewCategoryPage(){
          $type="add";
-           return view('admin.categories.edit_add',['type'=>$type]);
+         $parentCategories=ParentCategory::all();
+           return view('admin.categories.edit_add',['type'=>$type,'parentCategories'=>$parentCategories]);
          }
  
      function saveNewCategory(Request $request){
            $category=new Category();
              $category->categoryName = $request->categoryName;
+             $category->parentCategoryId = $request->parentCategoryId;
+             if($category->parentCategoryId!=null){
+               $category->isSubCategory = 1;
+             }
              $category->save();
      
         return redirect()->route('category.list.view');
@@ -28,7 +34,8 @@ class CategoryController extends Controller
      function editCategoryPage(Request $req){
         $category=Category::find($req->id);
         $type="edit";
-        return view('admin.categories.edit_add',['type'=>$type,'category'=>$category]);
+        $parentCategories=ParentCategory::all();
+        return view('admin.categories.edit_add',['type'=>$type,'category'=>$category,'parentCategories'=>$parentCategories]);
      }
      function updateCategory(Request $req){
         $category=Category::find($req->id);

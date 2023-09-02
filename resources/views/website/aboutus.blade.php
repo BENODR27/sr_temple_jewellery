@@ -119,7 +119,7 @@
                             We are authorised geographical indication & Handicrafts - Ministry of Textiles, Gov of India, jewellery maker.
                         </p>
                         <h5 class=" mb-5" style="color: black;">Registration No : AU/6999/GI/65/123</h5>
-                        <a href="contact.html" class="template-btn primary-btn text-uppercase"><span>Contact
+                        <a href="#contactfooter" class="template-btn primary-btn text-uppercase"><span>Contact
                                 Us</span></a>
                     </div>
                 </div>
@@ -370,24 +370,15 @@
     <section class="ur2-feedback-section ptb-120 overflow-hidden"
         data-background="assets/images/banner/light-background.jpg">
         <div class="ur2-feedback-slider slider-spacing px-3" >
+            @foreach ($testimonials as $item)
             <div class="ur2-feedback-single text-center">
                 <img src="assets/images/icons/quote-icon.png" alt="quote icon" class="img-fluid d-inline-block">
-                <h4 class="mb-40 mt-3" style="color: black;">“Lorem ipsum dolor sit amet consectetur adipiscing elit, felis
-                    blandit vehicula fusce proin primis, malesuada ante tincidunt”</h4>
-                <span class="text-uppercase secondary-text-color">By David Smith</span>
+                <h4 class="mb-40 mt-3" style="color: black;">“{{$item->customerNote}}”</h4>
+                <span class="text-uppercase secondary-text-color">{{$item->customerName}}</span>
             </div>
-            <div class="ur2-feedback-single text-center">
-                <img src="assets/images/icons/quote-icon.png" alt="quote icon" class="img-fluid d-inline-block">
-                <h4 class="mb-40 mt-3" style="color: black;">“Lorem ipsum dolor sit amet consectetur adipiscing elit, felis
-                    blandit vehicula fusce proin primis, malesuada ante tincidunt”</h4>
-                <span class="text-uppercase secondary-text-color">By Lyes Leo</span>
-            </div>
-            <div class="ur2-feedback-single text-center">
-                <img src="assets/images/icons/quote-icon.png" alt="quote icon" class="img-fluid d-inline-block">
-                <h4 class="mb-40 mt-3" style="color: black;">“Lorem ipsum dolor sit amet consectetur adipiscing elit, felis
-                    blandit vehicula fusce proin primis, malesuada ante tincidunt”</h4>
-                <span class="text-uppercase secondary-text-color">By Gennifer Jenny</span>
-            </div>
+          @endforeach
+          
+            
         </div>
     </section>
     <!--feedback section end-->

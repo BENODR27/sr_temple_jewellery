@@ -197,153 +197,55 @@
     </div>
     <!--cart drawer end-->
 
-
-
         <!--latest arrival start-->
         <section class="ur-latest-arrival ptb-120 bg-white">
             <div class="container">
                 <div class="row justify-content-center">
+
+                    <div class="col-md-6 text-center col-sm-12" style="position:absolute;right:30px;">
+                        <a href="shop-list.html" class="template-btn primary-btn"><span>Enquiry Via Whatsapp</span></a>
+                    </div>
                     <div class="col-md-6 col-sm-12">
                         <div class="text-center">
-                            <h2 class="h1 mb-50" style="color:black">Category</h2>
+                            <h2 class="h1 mb-50" style="color:black">{{$categoryName}}</h2>
                         </div>
-                    </div>
-                    <div class="col-md-6 text-center col-sm-12">
-                        <a href="shop-list.html" class="template-btn primary-btn"><span>Enquiry Via Whatsapp</span></a>
                     </div>
                 </div>
                 <div class="row g-4 justify-content-center">
+                    @if(count($images)!=0)
+                    @foreach ($images as $image)
                     <div class="col-xl-3 col-lg-4 col-sm-6">
                         <div class="ur-product-card position-relative card-sm-small">
-    
                             <div
                                 class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                                <a href="product-details.html"><img src="assets/images/bangles/bangle_1.jpg" alt="rings"
+                                <a href="product-details.html"><img src="{{ asset('storage/product/images/' . $image->imageName) }}" alt="{{$image->imageTitle}}"
                                         class="img-fluid"></a>
                             </div>
                             <div class="mt-4">
-                                <a href="shop-list.html" class="secondary-text-color text-uppercase">Bangles</a>
-    
-    
+                                <a href="shop-list.html" class="secondary-text-color text-uppercase">{{$image->imageTitle}}</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="ur-product-card position-relative card-sm-small">
-    
-                            <div
-                                class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                                <a href="product-details.html"><img src="assets/images/earrings/earings_1.jpg" alt="rings"
-                                        class="img-fluid"></a>
-                            </div>
-                            <div class="mt-4">
-                                <a href="shop-list.html" class="secondary-text-color text-uppercase">Earrings</a>
-    
-    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="ur-product-card position-relative card-sm-small">
-    
-                            <div
-                                class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                                <a href="product-details.html"><img src="assets/images/fancy_chockers/fancy.jpg" alt="rings"
-                                        class="img-fluid"></a>
-                            </div>
-                            <div class="mt-4">
-                                <a href="shop-list.html" class="secondary-text-color text-uppercase">Fancy Chockers</a>
-    
-    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="ur-product-card position-relative card-sm-small">
-    
-                            <div
-                                class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                                <a href="product-details.html"><img src="assets/images/headset/headset_2.JPG" alt="rings"
-                                        class="img-fluid"></a>
-                            </div>
-                            <div class="mt-4">
-                                <a href="shop-list.html" class="secondary-text-color text-uppercase">Headset</a>
-    
-    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="ur-product-card position-relative card-sm-small">
-    
-                            <div
-                                class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                                <a href="product-details.html"><img src="assets/images/long_harams/haram_1.jpg" alt="rings"
-                                        class="img-fluid"></a>
-                            </div>
-                            <div class="mt-4">
-                                <a href="shop-list.html" class="secondary-text-color text-uppercase">Long Harams</a>
-    
-    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="ur-product-card position-relative card-sm-small">
-    
-                            <div
-                                class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                                <a href="product-details.html"><img src="assets/images/necklaces_chockers/neck_1.jpg"
-                                        alt="rings" class="img-fluid"></a>
-                            </div>
-                            <div class="mt-4">
-                                <a href="shop-list.html" class="secondary-text-color text-uppercase">Necklaces &
-                                    Chockers</a>
-    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="ur-product-card position-relative card-sm-small">
-    
-                            <div
-                                class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                                <a href="product-details.html"><img src="assets/images/ottiyanam/belt.jpg" alt="rings"
-                                        class="img-fluid"></a>
-                            </div>
-                            <div class="mt-4">
-                                <a href="shop-list.html" class="secondary-text-color text-uppercase">Ottiyanam</a>
-    
-    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="ur-product-card position-relative card-sm-small">
-    
-                            <div
-                                class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                                <a href="product-details.html"><img src="assets/images/headset/headset_1.jpg" alt="rings"
-                                        class="img-fluid"></a>
-                            </div>
-                            <div class="mt-4">
-                                <a href="shop-list.html" class="secondary-text-color text-uppercase">Headset</a>
-    
-    
-                            </div>
-                        </div>
-                    </div>
-    
-    
-    
-    
+                    @endforeach
+                    @else
+                        <h1 class="row g-4 justify-content-center p-5" style="color:black !important">
+                            COMMING SOON
+                        </h1>
+                    @endif
                 </div>
-             
             </div>
         </section>
 
-   
+        <div style="position:absolute;right:30px;margin-top:-50px;">
+            @if(count($images)!=0)
+            {{ $images->appends(['id' => $images[0]->categoryId])->links('pagination::bootstrap-4') }}
+            @endif
+        </div>
 
+
+<style>
+    
+</style>
     <!--scroll top button start-->
     <button type="button" class="scroll-top-btn"><i class="fa-solid fa-hand-pointer"></i></button>
     <!--scroll top button end-->

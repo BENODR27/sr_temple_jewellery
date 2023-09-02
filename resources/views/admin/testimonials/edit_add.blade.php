@@ -9,37 +9,20 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                    <h4 class="card-title">@if($type=="edit")Edit @else Add @endif Category</h4> 
-                  <form class="forms-sample" method="post" action="{{ $type == 'add' ? route('category.save') : route('category.update',['id'=>$category->id]) }}">
+                    <h4 class="card-title">@if($type=="edit")Edit @else Add @endif Testimonial</h4> 
+                  <form class="forms-sample" method="post" action="{{ $type == 'add' ? route('testimonial.store') : route('testimonial.update',['id'=>$testimonial->id]) }}">
                       @csrf
                       @if($type == 'edit') @method('put') @endif
                       <div class="form-group">
-                          <label for="categoryName">Category Name</label>
-                          <input type="text" class="form-control" id="categoryName" name="categoryName" placeholder="Enter Here" value="{{ $type == 'edit' ? $category->categoryName : '' }}">
+                          <label for="customerName">Customer Name</label>
+                          <input type="text" class="form-control" id="customerName" name="customerName" placeholder="Enter Here" value="{{ $type == 'edit' ? $testimonial->customerName : '' }}">
                       </div>
-                      @if($type != 'edit')  
+                   
                       <div class="form-group">
-                          <label for="toggleButton">Toggle Group</label>
-                          <div class="form-check">
-                              <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" id="toggleButton">Is a subcategory
-                              </label>
-                          </div> 
-                      </div>
-                      @endif 
+                        <label for="customerNote">Customer Note</label>
+                   <textarea  id="customerNote" cols="30" class="form-control" name="customerNote" rows="30">{{ $type == 'edit' ? $testimonial->customerNote : '' }}</textarea>
+                        </div>
 
- <div class="form-group" id="groupNameContainer">
-    <label for="groupName">Select MainCategory</label>
-    <select class="form-control" name="parentCategoryId" >
-{{-- @if()
-
-@endif --}}
-      <option value="">default as parent category</option>
-      @foreach($parentCategories as $item)
-<option value="{{$item->id}}">{{$item->parentCategoryName}}</option>
-@endforeach
-    </select>
-</div> 
                       <button type="submit" class="btn btn-primary me-2">{{ $type == 'edit' ? 'Update' : 'Save' }}</button>
                   </form>
 

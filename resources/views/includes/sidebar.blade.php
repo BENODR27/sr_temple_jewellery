@@ -179,11 +179,19 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{route('parentCategory.list.view')}}">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <span class="menu-title">Parent Categories</span>
+            </a>
+          </li>
+         
+          <li class="nav-item">
             <a class="nav-link" href="{{route('category.list.view')}}">
               <i class="mdi mdi-cube-send menu-icon"></i>
               <span class="menu-title">Categories</span>
             </a>
           </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="{{route('product.images.view')}}">
               <i class="mdi mdi-basket-fill menu-icon"></i>
@@ -194,6 +202,12 @@
             <a class="nav-link" href="{{route('slide.images.view')}}">
               <i class="mdi mdi-elevator menu-icon"></i>
               <span class="menu-title">Slides</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('testimonial.index')}}">
+              <i class="mdi mdi-elevator menu-icon"></i>
+              <span class="menu-title">Testimonials</span>
             </a>
           </li>
           <li class="nav-item nav-category">UI Elements</li>
