@@ -20,13 +20,13 @@
 
             <div class="form-field d-flex align-items-center">
                 <span class="far fa-user"></span>
-                <input type="email" name="email" value="{{ old('email') }}" id="userName" placeholder="Username">
+                <input type="email" name="email" autocomplete="off" value="{{ old('email') }}" id="userName" placeholder="Username">
            
            
               </div>
             <div class="form-field d-flex align-items-center">
                 <span class="fas fa-key"></span>
-                <input type="password" name="password" required id="pwd" placeholder="Password">
+                <input type="password" name="password" autocomplete="off" required id="pwd" placeholder="Password">
             </div>
             <button type="submit" class="btn mt-3">Login</button>
         </form>

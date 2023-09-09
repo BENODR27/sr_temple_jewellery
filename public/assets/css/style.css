@@ -14,7 +14,7 @@ Version: 1.1.0
     --body-font: 'Prompt', sans-serif;
     --heading-font: 'Italiana', serif;
     --primary-color: #000000;  
-    --secondary-color: #f36a07;
+    --secondary-color: #000000;
     --text-color: #74787C;
     --border-color: #3D3D3D;
     --border-gray: #DEDEDE;
@@ -685,7 +685,7 @@ h3 {
 }
 
 .ur-navmenu ul li:hover>a {
-    color: var(--secondary-color);
+    color: var(--gold);
 }
 
 .ur-navmenu ul li:hover::after {

@@ -8,62 +8,7 @@
 ?>
     @include('includes.webslider')
 
-    <!--hero section start-->
-    {{-- <section class="ur-hero-section position-relative z-1 overflow-hidden" data-background="assets/images/bg/hero-bg.jpg">
-        <span class="circle-white position-absolute z--1 rounded-circle"></span>
-        <img src="assets/images/shapes/circle-1.png" alt="circle" class="position-absolute end-0 bottom-0 z--1 circle-color">
-        <div class="container">
-            <div class="ur-hero-slider slider-spacing">
-                <div class="ur-hero-single-slide">
-                    <div class="row align-items-center">
-                        <div class="col-xxl-5 col-xl-6">
-                            <div class="hero-left-content">
-                                <h5 class="hero-subtitle fw-normal mb-40">design by Andrew Holi</h5>
-                                <h1 class="hero-title mb-50">Hand Crafted Jewelry</h1>
-                                <a href="#" class="template-btn primary-btn"><span>Explore Now</span></a>
-                            </div>
-                        </div>
-                        <div class="col-xxl-7 col-xl-6">
-                            <div class="hero-right mt-5 mt-xl-0">
-                                <img src="assets/images/home1/hero-girl-1.png" alt="girl" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ur-hero-single-slide">
-                    <div class="row align-items-center">
-                        <div class="col-xxl-5 col-xl-6">
-                            <div class="hero-left-content">
-                                <h5 class="hero-subtitle fw-normal mb-40">design by Andrew Holi</h5>
-                                <h1 class="hero-title mb-50">Fory Ring In Diamond</h1>
-                                <a href="#" class="template-btn primary-btn"><span>Explore Now</span></a>
-                            </div>
-                        </div>
-                        <div class="col-xxl-7 col-xl-6">
-                            <div class="hero-right mt-5 mt-xl-0">
-                                <img src="assets/images/home1/hero-girl-2.png" alt="girl" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="ur-hero-feature-card d-flex align-items-center bg-white">
-            <div class="item-thumb">
-                <a href="#"><img src="assets/images/products/ring-sm.png" alt="product" class="img-fluid"></a>
-            </div>
-            <div>
-                <a href="#">
-                    <h5 class="mb-4 fw-normal">Deltanor Fory Ring in 24k Diamond</h5>
-                </a>
-                <div class="d-flex align-items-center product-meta gap-4">
-                    <a href="#" class="wish-btn"><i class="fa-regular fa-heart"></i></a>
-                    <a href="#" class="card-btn"><i class="fa-solid fa-plus"></i></a>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!--hero section end-->
+   
 
 <!--cart drawer start-->
     <div class="cart-drawer position-fixed">
@@ -162,7 +107,7 @@
  
 
     <!--category section start-->
-    <section class="ptb-120 bg-white">
+    <section class="ptb-120 ">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6">
@@ -231,13 +176,15 @@
                 @foreach ($images as $image)
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="ur-product-card position-relative card-sm-small">
-                        <div
-                            class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
-                            <a href="product-details.html"><img src="{{ asset('storage/product/images/' . $image->imageName) }}" alt="{{$image->imageTitle}}"
-                                    class="img-fluid"></a>
+                        <a class="position-absolute ur-badge coupon-badge" href="https://api.whatsapp.com/send?phone=918122937639&text=Hi%20I%20want%20{{$image->imageTitle}}%20{{ asset('storage/product/images/' . $image->imageName) }}"  target="_blank" style="color:green !important">
+                            Enquiry Via <i class="fab fa-whatsapp"></i>
+                        </a>
+                       
+                        <div class="feature-image d-flex align-items-cneter justify-content-center light-bg position-relative">
+                            <img src="{{ asset('storage/product/images/' . $image->imageName) }}" alt="{{$image->imageTitle}}" alt="rings" class="img-fluid">
                         </div>
                         <div class="mt-4">
-                            <a href="shop-list.html" class="secondary-text-color text-uppercase">{{$image->imageTitle}}</a>
+                            <div  class="secondary-text-color text-uppercase" style="margin-left:20px !important">{{$image->imageTitle}}</div>
                         </div>
                     </div>
                 </div>
@@ -269,13 +216,12 @@
                 <div class="col-xl-12 col-lg-12 order-2 order-lg-1 text-center">
                     <div class="section-content">
                         <div class="text-center"></div>
-                        <h2 class="h1 mb-50" style="color:White">Our Customer Testimonials</h2>
+                        <h2 class="h1 mb-50 mt-5" style="color:White">Our Customers Testimonials</h2>
                         <div class="ur-feedback-slider slider-spacing">
                             @foreach ($testimonials as $item)
                             <div class="ur-feedback-single">
-                                <p class="fw-light mb-4">“ {{$item->customerNote}}”</p>
-                                <h3 class=" mb-0">{{$item->customerName}}</h3>
-                                <!-- <span class="fs-sm fw-light ">DESIGNER</span> -->
+                                <p class="fw-light mb-4 ">“ {{$item->customerNote}}”</p>
+                                <h3 class=" mb-50">-&nbsp{{$item->customerName}}</h3>
                             </div>
                           @endforeach
                             

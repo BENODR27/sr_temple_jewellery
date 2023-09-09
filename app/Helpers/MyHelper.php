@@ -4,6 +4,7 @@ namespace App\Helpers;
 use App\Models\Product;
 use App\Models\ParentCategory;
 use App\Models\Category;
+
 class MyHelper
 {
     public static function generateDropDownData(){

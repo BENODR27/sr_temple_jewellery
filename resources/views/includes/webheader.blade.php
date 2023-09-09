@@ -27,7 +27,7 @@
             <div class="container-large">
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-6">
-                        <a href="index.html" class="logo-white"><img src="assets/images/logo.png" alt="logo"
+                        <a href="/" class="logo-white"><img src="assets/images/logo.png" alt="logo"
                                 class="img-fluid logo"></a>
                     </div>
                     <div class="col-xxl-7 col-xl-8 d-none d-xl-block">
@@ -59,17 +59,17 @@
                     <div class="col-xxl-3 col-xl-2 col-6">
                         <div class="ur-header-right d-flex align-items-center justify-content-end">
                             <div class="ur-user-links position-relative">
-                                <button type="button" class="user-btn">
+                                <a href="{{route('products')}}" class="user-btn">
                                     <i class="fa-solid fa-basket-shopping"></i>
-                                </button>
-                                <ul class="position-absolute user-menu">
+                                </a>
+                                {{-- <ul class="position-absolute user-menu">
                                     <li><a href="login.html">Login</a></li>
                                     <li><a href="signup.html">Sign Up</a></li>
                                     <li><a href="login.html">My Account</a></li>
-                                </ul>
+                                </ul> --}}
                             </div>
                             
-                            <div class="header-search d-none d-sm-block">
+                            {{-- <div class="header-search d-none d-sm-block">
                                 <div class="dropdown">
                                     <button class="search-btn" data-bs-toggle="dropdown"><i
                                             class="fa-solid fa-magnifying-glass"></i></button>
@@ -81,11 +81,11 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="d-sm-none">
+                            </div> --}}
+                            {{-- <div class="d-sm-none">
                                 <a href="javascript:void(0)" class="header-link header-search-open"><i
                                         class="fa-solid fa-magnifying-glass"></i></a>
-                            </div>
+                            </div> --}}
                             <div class="header-toggle">
                                 <button type="button"
                                     class="ur3-header-toggle offcanvus-toggle d-none d-xl-inline-block">
@@ -112,45 +112,22 @@
         <a href="javascript:void(0)" class="offcanvus-close"><i class="fa-solid fa-xmark"></i></a>
         <div class="content-top mb-100">
             <!-- <a href="index.html" class="offcanvus-logo"><img src="assets/images/logo.png" alt="logo "></a> -->
-            <p class="mb-0 mt-32 fw-light">SR Temple jewellery
-            </p>
+            <h1 class="mb-0 mt-20 fw-light" style="color:black !important">SR Temple jewellery
+            </h1>
         </div>
         <div class="offcanvus-gallery d-flex align-items-center flex-wrap">
-            <a href="#"><img src="assets/images/gallery/1.jpg" alt="not found"></a>
-            <a href="#"><img src="assets/images/gallery/2.jpg" alt="not found"></a>
-            <a href="#"><img src="assets/images/gallery/3.jpg" alt="not found"></a>
-            <a href="#"><img src="assets/images/gallery/4.jpg" alt="not found"></a>
-            <a href="#"><img src="assets/images/gallery/5.jpg" alt="not found"></a>
-            <a href="#"><img src="assets/images/gallery/6.jpg" alt="not found"></a>
-        </div>
-        <div class="offcanvus-newsletter">
-            <h4 class="mb-4 text-center">Newsletter</h4>
-            <form action="#">
-                <!-- <input type="email" placeholder="Enter your e-mail" class="theme-input"> -->
-                <button type="submit" class="template-btn primary-btn mt-3 w-100"><span>Enquiry Via Whatsapp</span></button>
-            </form>
-        </div>
-        <div class="offcanvus-bottom d-flex align-items-center justify-content-between">
-            <div class="language-switcher">
-                <div class="dropdown">
-                    <button type="button" data-bs-toggle="dropdown"><img src="assets/images/icons/flag-usa.png"
-                            alt="flag">English <span><i class="fas fa-angle-down"></i></span></button>
-                    <ul class="dropdown-menu">
-                        <!-- <li><a href="#"><img src="assets/images/icons/flag-bd.jpg" alt="flag">Bangla</a></li>
-                        <li><a href="#"><img src="assets/images/icons/flag-india.jpg" alt="flag">Hindi</a></li> -->
-                    </ul>
-                </div>
-            </div>
-            <!-- <div class="currency-switcher">
-                <select>
-                    <option>USD</option>
-                    <option>BDT</option>
-                    <option>CNY</option>
-                </select>
-            </div> -->
-            <!-- <div class="user-links">
-                <a href="login.html"><span class="me-2"><i class="fa-regular fa-user"></i></span>Account</a>
-            </div> -->
+            <a href="https://api.whatsapp.com/send?phone=918122937639&text=Hi%20I%20want%20jewells" class="template-btn primary-btn mt-3 w-100"><span>Enquiry Via Whatsapp</span></a>
+
+            {{-- <a href="#"><img src="assets/images/footer_products/1.jpg" alt="not found"></a>
+            <a href="#"><img src="assets/images/footer_products/2.jpg" alt="not found"></a>
+            <a href="#"><img src="assets/images/footer_products/3.jpg" alt="not found"></a>
+            <a href="#"><img src="assets/images/footer_products/4.jpg" alt="not found"></a>
+            <a href="#"><img src="assets/images/footer_products/5.jpg" alt="not found"></a>
+            <a href="#"><img src="assets/images/footer_products/6.jpg" alt="not found"></a>
+            <a href="#"><img src="assets/images/footer_products/7.jpg" alt="not found"></a>
+            <a href="#"><img src="assets/images/footer_products/8.jpg" alt="not found"></a>
+            <a href="#"><img src="assets/images/footer_products/9.jpg" alt="not found"></a> --}}
+           
         </div>
     </div>
     <!--offcanvus end-->
@@ -158,16 +135,20 @@
     <!--mobile menu start-->
     <div class="mobile-menu">
         <a href="javascript:void(0)" class="close"><i class="fas fa-xmark"></i></a>
-        <a href="#" class="logo"><img src="assets/images/logo.png" alt="logo" class="img-fluid"></a>
-        <ul class="mobile-nav-menu">
+        <a href="#" class="logo"><img src="assets/images/logo.png" alt="logo" class="img-fluid" style="height:100px"></a>
+
+
+        <nav class="mobile-nav-menu">
             <ul>
                 <li><a href="/">HOME</a></li>
                 <li><a href="{{route('aboutus')}}">ABOUTUS</a></li>
                 <li class="has-submenu"><a href="javascript:void(0)">PRODUCTS</a>
+                    <i class="fas fa-angle-down"></i>
                     <ul class="submenu-wrapper">
                         @foreach ($datas as $data)
                         @if($data['dropdownIdMain']==null)
                         <li class="has-submenu"><a href="javascript:void(0)">{{$data['dropdownNameMain']}}</a>
+                            <i class="fas fa-angle-down"></i>
                             <ul class="submenu-wrapper">
                                 @foreach ($data['subCategoryList'] as $item)
                                 <li><a href="{{route('products',['id'=>$item['dropdownIdSub']])}}">{{$item['dropdownNameSub']}}</a></li>
@@ -180,24 +161,26 @@
                          @endforeach
                     </ul>
                 </li>
-                <li><a href="/#contactfooter">CONTACT US</a></li>
+                <li><a id="contact_us_mobile_nav" href="/#contactfooter">CONTACT US</a></li>
             </ul>
+        </nav>
 
-
-        </ul>
-        <form class="mobile-search d-flex align-items-center mt-5" action="#">
-            <input type="text" placeholder="Search..." class="theme-input">
-            <button type="submit" class="template-btn primary-btn"><span>Go</span></button>
-        </form>
+       
     </div>
     <!--mobile menu end-->
 
     <!--search form start-->
-    <div class="ur-search-form">
+    {{-- <div class="ur-search-form">
         <a href="#" class="close"><i class="fas fa-xmark"></i></a>
         <form action="#" class="d-flex align-items-center">
             <input type="text" placeholder="Search...." class="theme-input">
             <button type="submit" class="submit-btn">Go</button>
         </form>
-    </div>
+    </div> --}}
     <!--search form end-->
+
+    <style>
+        .fa-angle-down{
+            color: black !important;
+        }
+    </style>

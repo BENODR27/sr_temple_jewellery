@@ -30,10 +30,12 @@
 
 
   <div class="container-scroller"> 
-
+@if(Auth::user())
   @include('../includes.header')
                 @yield('content')
   </div>
+
+  @endif
   <!-- container-scroller -->
 
   <!-- plugins:js -->

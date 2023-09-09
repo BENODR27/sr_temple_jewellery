@@ -9,7 +9,6 @@
 {{-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> --}}
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-<header class="hero-text">
 	<div class="hero" data-arrows="true" data-autoplay="true">
 	  <!--.hero-slide-->
 	
@@ -24,7 +23,7 @@
 	  </div>
       @endforeach
 	</div><!--.hero-->
-  </header>
+
   <script>
     jQuery(document).ready(function ($) {
 	  $('.hero').slick({
@@ -36,7 +35,7 @@
 		slidesToShow: 1,
 		slidesToScroll: 1,
         autoplay: true,
-		autoplaySpeed: 3000,
+		autoplaySpeed: 1000,
         draggable: false,
 		arrows: false,
 		responsive: [
@@ -84,9 +83,6 @@
   transform: none; /* Remove horizontal centering transform */
 }
 
-    header {
-  overflow: hidden;
-}
 
 .hero-text h2 {
   margin-bottom: 50px;

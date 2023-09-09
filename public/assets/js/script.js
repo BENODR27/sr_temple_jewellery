@@ -431,6 +431,9 @@
     $(".mobile-menu .close").on("click", function() {
         $(".mobile-menu").removeClass("active");
     });
+    $("#contact_us_mobile_nav").on("click", function() {
+        $(".mobile-menu").removeClass("active");
+    });
 
     $(".mobile-menu ul li.has-submenu i").each(function() {
         $(this).on("click", function() {

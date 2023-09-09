@@ -60,7 +60,7 @@
                     <div class="ur3-footer-copyright">
                         <div class="row align-items-center g-3">
                             <div class="col-md-6">
-                                <p class="mb-0 "> Distributed By: <a href="https:/benodr27.github.io/" target="_blank">Beno & Group</a></p>
+                                <p class="mb-0 "> Distributed By: <a href="https:/benodr27.github.io/" target="_blank">Beno</a></p>
                             </div>
                             <div class="col-md-6 d-flex" style="align-items: center;justify-content: center;">
                                 <div class="text-md-end d-flex"

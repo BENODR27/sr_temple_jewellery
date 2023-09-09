@@ -18,6 +18,9 @@ class WebsiteController extends Controller
         }else{
           $allImages=Product::paginate(12);
         }
+
+
+
         $datas = MyHelper::generateDropDownData();
         $category=Category::find($req->id);
       return view('website.products',['images'=>$allImages,'datas'=>$datas,'categoryName'=>$category!=null?$category->categoryName:""]);
@@ -28,7 +31,7 @@ class WebsiteController extends Controller
         $categories=Category::all();
         $testimonials = Testimonial::all();
         $latestProducts = Product::latest()->take(8)->get();
-        $datas = MyHelper::generateDropDownData();
+        $datas =MyHelper::generateDropDownData();
          return view('website.index',['slides'=>$slides,'datas'=>$datas,'images'=>$latestProducts,'categories'=>$categories,'testimonials'=>$testimonials]);
     }
     function aboutus(){
