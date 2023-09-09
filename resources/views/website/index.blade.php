@@ -114,7 +114,7 @@
                     <div class="text-center mb-60">
                         <h2 class="h1 fw-normal mb-4 wow fadeInUp" data-wow-duration="0.5s" style="color:black">Browse
                             By Category</h2>
-                        <p class="mb-0 fw-light wow wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="0.5s">Our
+                        <p class="mb-0 fw-light wow wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="0.5s" style="color:black !important">Our
                             jewellery completely handmade by skilled craftsman, focused on quality & Finishing, perfect
                             for
                             bharathanatyam, Kuchipudi, Mohiniyattam, etc., and cherished for years.</p>
