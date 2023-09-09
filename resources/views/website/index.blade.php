@@ -200,7 +200,7 @@
 
             </div>
             <div class="text-center mt-60">
-                <a href="{{route('products')}}" class="template-btn primary-btn"><span>View All</span></a>
+                <a href="{{route('products',['id'=>-1])}}" class="template-btn primary-btn"><span>View All</span></a>
             </div>
         </div>
     </section>

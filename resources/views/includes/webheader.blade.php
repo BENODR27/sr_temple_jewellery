@@ -52,6 +52,8 @@
                                          @endforeach
                                     </ul>
                                 </li>
+                                <li><a id="latest_arrivals_nav" href="{{route('products',['id'=>-1])}}">Latest Arrivals</a></li>
+
                                 <li><a href="/#contactfooter">CONTACT US</a></li>
                             </ul>
                         </nav>
@@ -161,6 +163,7 @@
                          @endforeach
                     </ul>
                 </li>
+                <li><a id="latest_arrivals_nav" href="{{route('products')}}">Latest Arrivals</a></li>
                 <li><a id="contact_us_mobile_nav" href="/#contactfooter">CONTACT US</a></li>
             </ul>
         </nav>

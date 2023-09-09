@@ -14,7 +14,12 @@ class WebsiteController extends Controller
 {
     function getSelectedCategoryProducts(Request $req){
         if($req->id!=null){
-          $allImages=Product::where('categoryId',$req->id)->paginate(12);
+          if($req->id==-1){
+            $allImages=Product::all()->reverse();
+
+          }else{
+            $allImages=Product::where('categoryId',$req->id)->paginate(12);
+          }
         }else{
           $allImages=Product::paginate(12);
         }
