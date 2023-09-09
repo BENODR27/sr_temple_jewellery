@@ -13,12 +13,15 @@ use App\Helpers\MyHelper;
 class WebsiteController extends Controller
 {
     function getSelectedCategoryProducts(Request $req){
+      $category=null;
         if($req->id!=null){
           if($req->id==-1){
-            $allImages=Product::all()->reverse();
+            $allImages=Product::all();
 
           }else{
             $allImages=Product::where('categoryId',$req->id)->paginate(12);
+            $category=Category::find($req->id);
+
           }
         }else{
           $allImages=Product::paginate(12);
@@ -27,7 +30,7 @@ class WebsiteController extends Controller
 
 
         $datas = MyHelper::generateDropDownData();
-        $category=Category::find($req->id);
+
       return view('website.products',['images'=>$allImages,'datas'=>$datas,'categoryName'=>$category!=null?$category->categoryName:""]);
       }
    
