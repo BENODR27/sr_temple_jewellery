@@ -16,7 +16,7 @@ class WebsiteController extends Controller
       $category=null;
         if($req->id!=null){
           if($req->id==-1){
-            $allImages=Product::all();
+            $allImages=Product::paginate(12);
 
           }else{
             $allImages=Product::where('categoryId',$req->id)->paginate(12);

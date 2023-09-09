@@ -39,6 +39,7 @@
 
         <div style="position:absolute;right:30px;margin-top:-50px;">
             @if(count($images)!=0)
+            
             {{ $images->appends(['id' => $images[0]->categoryId])->links('pagination::bootstrap-4') }}
             @endif
         </div>
