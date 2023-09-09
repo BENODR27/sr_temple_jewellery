@@ -27,7 +27,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+Route::get('/logout_admin',function(){
+Auth::logout();
+return redirect()->route('login');
+})->name('logout_admin');
 //parent categories
 
 Route::get('/parent_categories_list',[App\Http\Controllers\ParentCategoryController::class, 'categoryList'])->name('parentCategory.list.view');
