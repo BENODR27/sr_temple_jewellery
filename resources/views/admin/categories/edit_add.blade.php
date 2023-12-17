@@ -35,10 +35,12 @@
 
 @endif --}}
       <option value="">default as parent category</option>
+
       @foreach($parentCategories as $item)
 <option value="{{$item->id}}">{{$item->parentCategoryName}}</option>
 @endforeach
     </select>
+    
 </div> 
                       <button type="submit" class="btn btn-primary me-2">{{ $type == 'edit' ? 'Update' : 'Save' }}</button>
                   </form>

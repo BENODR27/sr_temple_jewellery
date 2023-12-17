@@ -181,7 +181,7 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('parentCategory.list.view')}}">
               <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Parent Categories</span>
+              <span class="menu-title">Main Categories</span>
             </a>
           </li>
          

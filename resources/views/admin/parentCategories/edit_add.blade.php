@@ -10,12 +10,12 @@
                 <div class="card">
                     <div class="card-body">
                     <h4 class="card-title">@if($type=="edit")Edit @else Add @endif Category</h4> 
-                  <form class="forms-sample" method="post" action="{{ $type == 'add' ? route('parentCategory.save') : route('parentCategory.update',['id'=>$productCategory->id]) }}">
+                  <form class="forms-sample" method="post" action="{{ $type == 'add' ? route('parentCategory.save') : route('parentCategory.update',['id'=>$parentCategory->id]) }}">
                       @csrf
                       @if($type == 'edit') @method('put') @endif
                       <div class="form-group">
                           <label for="parentCategoryName">Category Name</label>
-                          <input type="text" class="form-control" id="categoryName" name="parentCategoryName" placeholder="Enter Here" value="{{ $type == 'edit' ? $productCategory->categoryName : '' }}">
+                          <input type="text" class="form-control" id="categoryName" name="parentCategoryName" placeholder="Enter Here" value="{{ $type == 'edit' ? $parentCategory->parentCategoryName : '' }}">
                       </div>
                       <div class="form-group">
     <!-- <label for="toggleButton">Toggle Group</label> -->

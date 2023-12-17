@@ -15,6 +15,7 @@ class MyHelper
         foreach($parentCategories as $key=>$parentCategory){
             $dropdownNameMain=$parentCategory->parentCategoryName;
             $subCategories=Category::where('parentCategoryId',$parentCategory->id)->get();
+            $subCategoryList=[];
             foreach($subCategories as $key=>$subCategory){
                 $subCategoryList[count($subCategoryList)!=0?count($subCategoryList)+1:0]=[
                     'dropdownNameSub'=>$subCategory->categoryName,
@@ -40,6 +41,7 @@ class MyHelper
                 'subCategoryList'=>null
             ];
         }
+        // dd($data);
         return $data;
     }
 }
