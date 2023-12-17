@@ -142,7 +142,7 @@
 
         <nav class="mobile-nav-menu">
             <ul>
-                <li><a href="/">HOME</a></li>
+                <li><a href="{{route('/')}}">HOME</a></li>
                 <li><a href="{{route('aboutus')}}">ABOUTUS</a></li>
                 <li class="has-submenu"><a href="javascript:void(0)">PRODUCTS</a>
                     <i class="fas fa-angle-down"></i>
