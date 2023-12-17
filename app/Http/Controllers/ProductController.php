@@ -33,7 +33,7 @@ class ProductController extends Controller
             $uniqueId = uniqid(); // Generate a unique ID
     
             // Generate a unique name for the image using the unique ID and the original file extension
-            $imageName = $uniqueId . '.' . $file->getClientOriginalExtension();
+            $imageName = $uniqueId . '.' . '.png';
     
             // Store the image in the storage
             $file->storeAs('public/product/images', $imageName); // 'images' is the storage folder
