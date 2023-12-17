@@ -33,7 +33,7 @@
                     <div class="col-xxl-7 col-xl-8 d-none d-xl-block">
                         <nav class="ur-navmenu">
                             <ul>
-                                <li><a href="/">HOME</a></li>
+                                <li><a href="{{route('/')}}">HOME</a></li>
                                 <li><a href="{{route('aboutus')}}">ABOUTUS</a></li>
                                 <li class="has-submenu"><a href="javascript:void(0)">PRODUCTS</a>
                                     <ul class="submenu-wrapper">
