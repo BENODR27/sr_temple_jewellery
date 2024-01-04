@@ -199,6 +199,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{route('product.images.view',['isLatest'=>true])}}">
+              <i class="mdi mdi-basket-fill menu-icon"></i>
+              <span class="menu-title">Latest</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{route('slide.images.view')}}">
               <i class="mdi mdi-elevator menu-icon"></i>
               <span class="menu-title">Slides</span>

@@ -33,6 +33,11 @@
                                 </select>
                             </div>
                             <div class="form-group">
+                              <label class="form-label" for="textAreaExample">Description</label>
+
+                              <textarea class="form-control" required name="description" placeholder="Description" id="textAreaExample1" value="{{ $type == 'edit' ? $product->description : '' }}" rows="4">{{ $type == 'edit' ? $product->description : '' }}</textarea>
+                            </div>
+                            <div class="form-group">
                                 <label for="imageTitle">Image Title</label>
                                 <input type="text" class="form-control" id="imageTitle" name="imageTitle" value="{{ $type == 'edit' ? $product->imageTitle : '' }}" placeholder="Image Title" required>
                             </div>
@@ -41,7 +46,7 @@
                                 <div class="js--image-preview"></div>
                                 <div class="upload-options">
                                   <label>
-                                    <input name="image" type="file" class="image-upload " accept="image/*"  {{ $type == 'add' ? 'required' : '' }}/>
+                                    <input name="image" type="file" class="image-upload" accept="image/*"  {{ $type == 'add' ? 'required' : '' }}/>
                                   </label>
                                 </div>
                               </div>

@@ -11,11 +11,12 @@ use App\Helpers\MyHelper;
 
 class ProductController extends Controller
 {
-
-
-    function productGallery(){
-       $allImages=Product::all();
-     
+    function productGallery(Request $req){
+      if($req->isLatest!=null){
+        $allImages=Product::where('isLatest',true)->get();
+      }else{
+        $allImages=Product::all();
+      }
       return view('admin.products.browse',['images'=>$allImages]);
     }
     
@@ -33,7 +34,7 @@ class ProductController extends Controller
             $uniqueId = uniqid(); // Generate a unique ID
     
             // Generate a unique name for the image using the unique ID and the original file extension
-            $imageName = $uniqueId . '.' . '.png';
+            $imageName = $uniqueId . '.' . 'png';
     
             // Store the image in the storage
             $file->storeAs('public/product/images', $imageName); // 'images' is the storage folder
@@ -41,6 +42,7 @@ class ProductController extends Controller
             // Save the image name to the database
             $product->categoryId = $request->categoryId;
             $product->imageTitle = $request->imageTitle;
+            $product->description = $request->description;
             $product->imageName = $imageName;
             $product->save();
     
@@ -75,6 +77,7 @@ class ProductController extends Controller
    }
    $product->categoryId = $request->categoryId;
    $product->imageTitle = $request->imageTitle;
+   $product->description = $request->description;
    $product->update();
    return redirect()->route('product.images.view');
   }
@@ -83,6 +86,12 @@ class ProductController extends Controller
     $fileToDelete = 'public/product/images/' . $product->imageName;
     Storage::delete($fileToDelete);
     $product->delete();
+    return redirect()->back();
+   }
+   function toggleLatest(Request $req){
+    $product=Product::find($req->product_id);
+    $product->isLatest=!$product->isLatest;
+    $product->save();
     return redirect()->back();
    }
 

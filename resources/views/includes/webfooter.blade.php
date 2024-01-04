@@ -44,7 +44,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xxl-4 col-xl-2 col-lg-3 col-md-6">
+                        {{-- <div class="col-xxl-4 col-xl-2 col-lg-3 col-md-6">
                             <div class="ur3-footer-widget">
                                 <h4 class=" widget-title mb-40 fw-normal">Terms and Conditions</h4>
                                 <ul class="ur3-footer-links">
@@ -55,7 +55,7 @@
                                     <li><a href="#">Combos</a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="ur3-footer-copyright">
                         <div class="row align-items-center g-3">
@@ -129,7 +129,12 @@
                     </ul>
                 </div>
             </div>
+            <div class="row">
+                <span class="float-none float-sm-left d-block mt-1 mt-sm-0 text-center mb-2 ">powered by <a href="https://futureinterstellar.com/" target="_blank">FI</a></span>
+
+            </div> 
         </div>
+        
     </footer>
     <!--footer section end-->
 

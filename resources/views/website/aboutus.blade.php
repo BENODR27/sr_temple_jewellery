@@ -236,7 +236,7 @@
                             the frames (now in silver), twisting the silver wire into designs, fixing the wax,
                             embedding the stones in it and covering the silver with repeated layers of gold leaf,
                             is still followed by the artisans.</h6>
-                        <a href="#" class="template-btn primary-btn wow fadeInUp" data-wow-delay="0.5s"
+                        <a href="{{route('products')}}" class="template-btn primary-btn wow fadeInUp" data-wow-delay="0.5s"
                             data-wow-duration="0.5s"><span>Discover More</span></a>
                     </div>
                 </div>

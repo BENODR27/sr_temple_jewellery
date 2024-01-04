@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+
     <!--favicon-->
     <link rel="icon" href="assets/images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -42,6 +43,7 @@
 
 @include('includes.webfooter')
 
+
     <!--Esential Js Files-->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
@@ -53,6 +55,8 @@
     <script src="assets/js/countdown.min.js"></script>
     <script src="assets/js/wow.js"></script>
     <script src="assets/js/script.js"></script>
+
+
 
 </body>
 

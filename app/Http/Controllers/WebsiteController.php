@@ -12,12 +12,17 @@ use App\Helpers\MyHelper;
 
 class WebsiteController extends Controller
 {
+  function getSelectedProduct(Request $req){
+    $datas = MyHelper::generateDropDownData();
+    $product=Product::find($req->product_id);
+    return view('website.product',['datas'=>$datas,'product'=>$product]);
+  }
     function getSelectedCategoryProducts(Request $req){
       $titleName="";
       $category=null;
         if($req->id!=null){
           if($req->id==-1){
-            $allImages=Product::paginate(12);
+            $allImages=Product::where('isLatest',true)->paginate(12);
             $titleName="LATEST ARRIVALS";
 
           }else{
@@ -39,10 +44,10 @@ class WebsiteController extends Controller
       }
    
     function website(){
-       $slides=Slide::all();
+        $slides=Slide::all();
         $categories=Category::all();
         $testimonials = Testimonial::all();
-        $latestProducts = Product::latest()->take(8)->get();
+        $latestProducts = Product::where('isLatest',true)->take(8)->get();
         $datas =MyHelper::generateDropDownData();
          return view('website.index',['slides'=>$slides,'datas'=>$datas,'images'=>$latestProducts,'categories'=>$categories,'testimonials'=>$testimonials]);
     }

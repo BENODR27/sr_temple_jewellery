@@ -5,10 +5,8 @@
                 <div class="row align-items-center">
                     <div class="col-xl-7 col-lg-8">
                         <div class="topbar-info d-flex align-items-center gap-48 flex-wrap">
-                            <span class=" item-single">100% Quality</span>
                             <span class=" item-single">World Wide Shipping</span>
                             <span class=" item-single">GI Tag Product</span>
-                            <!-- <span class=" item-single">Authorised Jewellery Maker</span> -->
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-4">
@@ -60,41 +58,21 @@
                     </div>
                     <div class="col-xxl-3 col-xl-2 col-6">
                         <div class="ur-header-right d-flex align-items-center justify-content-end">
-                            <div class="ur-user-links position-relative">
+                            {{-- <div class="ur-user-links position-relative">
                                 <a href="{{route('products')}}" class="user-btn">
                                     <i class="fa-solid fa-basket-shopping"></i>
                                 </a>
-                                {{-- <ul class="position-absolute user-menu">
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="signup.html">Sign Up</a></li>
-                                    <li><a href="login.html">My Account</a></li>
-                                </ul> --}}
-                            </div>
+                                
+                            </div> --}}
                             
-                            {{-- <div class="header-search d-none d-sm-block">
-                                <div class="dropdown">
-                                    <button class="search-btn" data-bs-toggle="dropdown"><i
-                                            class="fa-solid fa-magnifying-glass"></i></button>
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <form class="search-form d-flex align-items-center gap-2">
-                                            <input type="text" placeholder="Search..."
-                                                class="theme-input bg-transparent">
-                                            <button type="submit" class="submit-btn">Go</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div> --}}
-                            {{-- <div class="d-sm-none">
-                                <a href="javascript:void(0)" class="header-link header-search-open"><i
-                                        class="fa-solid fa-magnifying-glass"></i></a>
-                            </div> --}}
+                            
                             <div class="header-toggle">
-                                <button type="button"
+                                {{-- <button type="button"
                                     class="ur3-header-toggle offcanvus-toggle d-none d-xl-inline-block">
                                     <span></span>
                                     <span></span>
                                     <span></span>
-                                </button>
+                                </button> --}}
                                 <button type="button" class="ur3-header-toggle mobile-menu-toggle d-xl-none">
                                     <span></span>
                                     <span></span>
@@ -109,32 +87,20 @@
     </header>
     <!--header section end-->
 
-    <!--offcanvus start-->
+    {{-- <!--offcanvus start-->
     <div class="offcanvus-box position-fixed bg-white">
         <a href="javascript:void(0)" class="offcanvus-close"><i class="fa-solid fa-xmark"></i></a>
         <div class="content-top mb-100">
-            <!-- <a href="index.html" class="offcanvus-logo"><img src="assets/images/logo.png" alt="logo "></a> -->
             <h1 class="mb-0 mt-20 fw-light" style="color:black !important">SR Temple jewellery
             </h1>
         </div>
         <div class="offcanvus-gallery d-flex align-items-center flex-wrap">
             <a href="https://api.whatsapp.com/send?phone=918122937639&text=Hi%20I%20want%20jewells" class="template-btn primary-btn mt-3 w-100"><span>Enquiry Via Whatsapp</span></a>
 
-            {{-- <a href="#"><img src="assets/images/footer_products/1.jpg" alt="not found"></a>
-            <a href="#"><img src="assets/images/footer_products/2.jpg" alt="not found"></a>
-            <a href="#"><img src="assets/images/footer_products/3.jpg" alt="not found"></a>
-            <a href="#"><img src="assets/images/footer_products/4.jpg" alt="not found"></a>
-            <a href="#"><img src="assets/images/footer_products/5.jpg" alt="not found"></a>
-            <a href="#"><img src="assets/images/footer_products/6.jpg" alt="not found"></a>
-            <a href="#"><img src="assets/images/footer_products/7.jpg" alt="not found"></a>
-            <a href="#"><img src="assets/images/footer_products/8.jpg" alt="not found"></a>
-            <a href="#"><img src="assets/images/footer_products/9.jpg" alt="not found"></a> --}}
            
         </div>
-    </div>
-    <!--offcanvus end-->
-
-    <!--mobile menu start-->
+    </div> --}}
+  
     <div class="mobile-menu">
         <a href="javascript:void(0)" class="close"><i class="fas fa-xmark"></i></a>
         <a href="#" class="logo"><img src="assets/images/logo.png" alt="logo" class="img-fluid" style="height:100px"></a>

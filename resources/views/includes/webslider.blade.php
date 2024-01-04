@@ -13,8 +13,8 @@
          <img alt="{{$slide->imageName}}" class="img-responsive cover" src="{{ asset('storage/slide/images/' . $slide->imageName) }}">
          <div class="header-content text-white position-absolute col-lg-4">
             {{-- slide-content --}}
-            <h2 class="mb-4"><span class="d-block font-weight-bold" style="color:gold !important">AUTHENTIC TEMPLE JEWELLERY</span></h2>  
-            <h4 class="mb-4"><span class="d-block font-weight-bold">Made in 95% Silver & 24k Gold with real Kemb stones</span></h4>  
+            <h4 class="mb-4"><span class="d-block font-weight-bold" style="color:gold !important">AUTHENTIC TEMPLE JEWELLERY</span></h4>  
+            <h6 class="mb-4"><span class="d-block font-weight-bold">Made in 95% Silver & 24k Gold with real Kemp stones</span></h6>  
             <a class="btn btn-primary btn-lg w-max mt-2" style="background-color:black !important"href="{{route('products')}}" tabindex="0">Our Collections</a>
          </div>
 	  </div>

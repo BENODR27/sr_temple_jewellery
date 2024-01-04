@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('imageTitle');
             $table->string('imageName');
+            $table->boolean('isLatest')->default(false);
+            $table->longText('description')->nullable();
             $table->Integer('categoryId');
             $table->timestamps();
         });

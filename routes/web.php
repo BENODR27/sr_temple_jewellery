@@ -62,6 +62,7 @@ Route::post('/product_save',[App\Http\Controllers\ProductController::class, 'sav
 Route::get('/product_edit',[App\Http\Controllers\ProductController::class, 'editProductPage'])->name('product.edit');
 Route::put('/product_update',[App\Http\Controllers\ProductController::class, 'updateProduct'])->name('product.update');
 Route::get('/product_delete',[App\Http\Controllers\ProductController::class, 'deleteProduct'])->name('product.delete');
+Route::any('/toggleLatest',[App\Http\Controllers\ProductController::class, 'toggleLatest'])->name('toggleLatest');
 
 //slides
 
@@ -104,4 +105,5 @@ Route::get('/testimonials/delete', [App\Http\Controllers\TestimonialController::
 
 Route::get('/',[App\Http\Controllers\WebsiteController::class, 'website'])->name('/');
 Route::get('/products', [App\Http\Controllers\WebsiteController::class, 'getSelectedCategoryProducts'])->name('products');
+Route::get('/product', [App\Http\Controllers\WebsiteController::class, 'getSelectedProduct'])->name('product');
 Route::get('/aboutus', [App\Http\Controllers\WebsiteController::class, 'aboutus'])->name('aboutus');
